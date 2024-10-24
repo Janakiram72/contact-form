@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact-form</title>
+    <link rel="stylesheet" href="Day_4.css" />
+  </head>
+  <body>
+    <div class="contact-container">
+      <form
+        action="https://api.web3forms.com/submit"
+        class="left-cotainer"
+        method="post"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="ffc5f70e-4189-4e88-9c70-da9519e33eb6"
+        />
+        <div class="contact-left-title">
+          <h2>Contact Us</h2>
+          <hr />
+        </div>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Your Nmae"
+          class="contact-input"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Your Email"
+          id=""
+          class="contact-input"
+        />
+        <textarea
+          name="message"
+          placeholder="Enter Your Message"
+          id=""
+        ></textarea>
+        <button type="submit">submit <img src="arrow_icon.png" width=" 20%"></button>
+      </form>
+      <div class="right-container">
+        <div id="observablehq-chart-ec94cb0f"></div>
+      </div>
+    </div>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+    />
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/@d3/force-directed-graph/2.js?v=4";
+      new Runtime().module(define, (name) => {
+        if (name === "chart")
+          return new Inspector(
+            document.querySelector("#observablehq-chart-ec94cb0f")
+          );
+      });
+    </script>
+  </body>
+</html>
